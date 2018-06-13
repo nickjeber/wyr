@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import Login from './components/login';
-import { selectUser } from './actions/user';
+import Login from './components/Login';
+import UserInfo from './components/UserInfo';
 import { connect } from 'react-redux';
 import { loadInitialData } from './actions/shared';
 
 class App extends Component {
-  //TODO: move this into Login component
-  handleUserSelected = (userId) => {
-    this.dispatch(selectUser(userId));
-  }
-
   componentDidMount() {
     this.props.dispatch(loadInitialData())
   }
@@ -18,9 +13,18 @@ class App extends Component {
   render() {
     if(this.props.authedUser) {
       return (
-        <div>
-          Would you rather app!!
-        </div> );
+        <div className='app-container'>
+          <div className='header'>
+            <UserInfo />
+          </div>
+          <div className='content'>
+            <h3>Would you rather!</h3>
+          </div>
+          <div className='footer'>
+            made by S.Tynskyi
+          </div>
+        </div> 
+      );
     }
 
     return (

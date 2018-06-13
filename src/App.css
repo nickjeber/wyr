@@ -37,3 +37,55 @@ html, #root, body {
   padding: 10px;
   color: white;
 }
+
+.user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+}
+
+.user-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-info button {
+  background: none;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.user-info span {
+  font-size: 14px;
+  padding: 10px;
+}
+
+.app-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container .header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.app-container .content {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.app-container .footer {
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+  font-size: 11px;
+  display: flex;
+}
