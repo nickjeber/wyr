@@ -14,7 +14,7 @@ html, #root, body {
 
 .login-form {
   width: 400px;
-  height: 200px;
+  min-height: 200px;
   box-shadow: 3px 3px 20px gray;
   border: 1px solid lightgray;
 
@@ -39,7 +39,7 @@ html, #root, body {
 
 .signup-form {
   width: 400px;
-  height: 100px;
+  min-height: 100px;
   box-shadow: 3px 3px 20px gray;
   border: 1px solid lightgray;
 }

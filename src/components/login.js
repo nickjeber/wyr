@@ -1,6 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-export default class Login extends React.Component {
+class Login extends React.Component {
   render(){
     return (
       <div className='login-container'>
@@ -9,7 +10,7 @@ export default class Login extends React.Component {
           <span>Select user from the list</span>
           <select>
             {this.props.users.map((user) => (
-              <option>{user.name}</option>
+              <option key={user.id}>{user.name}</option>
             ))}
           </select>
           <button>Log in</button>
@@ -21,3 +22,11 @@ export default class Login extends React.Component {
     );
   }
 }
+
+const mapStateToPorps = (state) => {
+  return {
+    users: state.users || []
+  }
+}
+
+export default connect(mapStateToPorps)(Login);
