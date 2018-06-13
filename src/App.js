@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   render() {
-    if(this.props.authUser) {
+    if(this.props.authedUser) {
       return (
         <div>
           Would you rather app!!
@@ -31,7 +31,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    authUser: state.authUser
+    authedUser: state.authedUser
   }
 }
 

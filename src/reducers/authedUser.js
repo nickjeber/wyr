@@ -1,12 +1,9 @@
 import { SELECT_USER } from "../actions/user";
 
-export default (state = {}, action) => {
+export default (state = null, action) => {
   switch(action.type) {
     case SELECT_USER : 
-      return {
-        ...state,
-        authUser: action.id
-      }
+      return action.id;
     default: 
       return state;
   }

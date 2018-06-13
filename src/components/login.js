@@ -1,23 +1,41 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { selectUser } from '../actions/user';
+
 
 class Login extends React.Component {
-  render(){
+  state = {
+    selectedUser: null
+  };
+
+  userChanged = (e) => {
+    this.setState({
+      selectedUser: e.target.value
+    })
+  }
+
+  logIn = () => {
+    this.props.dispatch(selectUser(this.state.selectedUser));
+  }
+
+  render() {
     return (
       <div className='login-container'>
         <h4>Log in</h4>
         <div className='login-form'>
-          <span>Select user from the list</span>
-          <select>
+          <select onChange={this.userChanged}>
+            <option value={null}>Select user please</option>
             {this.props.users.map((user) => (
-              <option key={user.id}>{user.name}</option>
+              <option key={user.id} value={user.id}>{user.name}</option>
             ))}
           </select>
-          <button>Log in</button>
+          <button onClick={this.logIn}>Log in</button>
         </div>
-        <h4>Or sign up</h4>
+        {/* <h4>Or sign up</h4>
         <div className='signup-form'>
-        </div>
+            <input type='text' placeholder='Enter user name'/>
+            <button>Create and enter</button>
+        </div> */}
       </div>
     );
   }

@@ -12,10 +12,10 @@ html, #root, body {
   flex-direction: column;
 }
 
-.login-form {
+.login-form, 
+.signup-form {
   width: 400px;
-  min-height: 200px;
-  box-shadow: 3px 3px 20px gray;
+  min-height: 150px;
   border: 1px solid lightgray;
 
   display: flex;
@@ -23,23 +23,17 @@ html, #root, body {
   justify-content: center;
   align-items: center;
 }
-.login-form select,
-.login-form button {
+.login-container select,
+.login-container button,
+.login-container input {
   padding: 5px;
   margin-top: 20px;
   width: 300px;
 }
 
-.login-form button {
+.login-container button {
   background-color: #4083ef;
   border: 1px solid #0d48a5;
   padding: 10px;
   color: white;
-}
-
-.signup-form {
-  width: 400px;
-  min-height: 100px;
-  box-shadow: 3px 3px 20px gray;
-  border: 1px solid lightgray;
 }
