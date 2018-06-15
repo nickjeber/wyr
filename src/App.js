@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import Login from './components/Login';
-import UserInfo from './components/UserInfo';
 import { connect } from 'react-redux';
 import { loadInitialData } from './actions/shared';
+import MainContent from './components/HomePage';
+import LoadingBar from 'react-redux-loading';
 
 class App extends Component {
   componentDidMount() {
@@ -13,22 +14,18 @@ class App extends Component {
   render() {
     if(this.props.authedUser) {
       return (
-        <div className='app-container'>
-          <div className='header'>
-            <UserInfo />
-          </div>
-          <div className='content'>
-            <h3>Would you rather!</h3>
-          </div>
-          <div className='footer'>
-            made by S.Tynskyi
-          </div>
-        </div> 
+        <div style={{height: '100%'}}>
+          <LoadingBar />
+          <MainContent />
+        </div>
       );
     }
 
     return (
-      <Login />
+      <div>
+        <LoadingBar />
+        <Login />
+      </div>
     );
   }
 }
