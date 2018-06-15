@@ -2,8 +2,8 @@ import React from 'react';
 
 export default class Question extends React.Component {
   state = {
-    optionOne: false,
-    optionTwo: false
+    optionOne: this.props.answer === 'optionOne',
+    optionTwo: this.props.answer === 'optionTwo'
   }
 
   optionTwoChanged = () => {
@@ -12,7 +12,7 @@ export default class Question extends React.Component {
       optionTwo: !prev.optionTwo
     }));
 
-    this.props.answerQuestion(this.props.id, 'optionOne');
+    this.props.answerQuestion(this.props.id, 'optionTwo');
   }
 
   optionOneChanged = () => {
@@ -21,8 +21,15 @@ export default class Question extends React.Component {
       optionOne: !prev.optionOne
     }));
 
-    this.props.answerQuestion(this.props.id, 'optionTwo');
+    this.props.answerQuestion(this.props.id, 'optionOne');
   }
+
+  // componentDidMount() {
+  //   if(this.props.answer){
+  //     this.state.optionOne = this.props.answer === 'optionOne',
+  //     this.state.optionTwo = this.props.answer === 'optionTwo'
+  //   }
+  // }
 
   render() {
     return (
@@ -30,16 +37,20 @@ export default class Question extends React.Component {
         <div>
           <label>
             <input type='checkbox' 
-              onChange={this.optionOneChanged}
-              checked={this.state.optionOne}/>{this.props.optionOne}
+              onChange={this.optionOneChanged} 
+              disabled={this.props.answer}
+              checked={this.state.optionOne}/>
+            {this.props.optionOne}
           </label>
         </div>
         <div>
           <label>
             <input type='checkbox' 
               onChange={this.optionTwoChanged}
-              checked={this.state.optionTwo}/>{this.props.optionTwo}
-            </label>
+              disabled={this.props.answer}
+              checked={this.state.optionTwo}/>
+            {this.props.optionTwo}
+          </label>
         </div>
       </div>
     );

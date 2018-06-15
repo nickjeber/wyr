@@ -97,6 +97,7 @@ html, #root, body {
   padding: 10px;
   border: 1px solid #e9e9e9;
   margin-top: 10px;
+  min-width: 300px;
 }
 
 .question div {

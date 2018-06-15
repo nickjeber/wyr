@@ -4,7 +4,7 @@ import Question from './Question';
 import { answerQuestion } from '../actions/questions';
 
 class QuestionList extends React.Component {
-  answerQuestion = (questionId, answer) => {
+  handleAnswerQuestion = (questionId, answer) => {
     this.props.dispatch(answerQuestion(this.props.authedUser, questionId, answer));
   }
 
@@ -13,11 +13,16 @@ class QuestionList extends React.Component {
       <div className='question-container'>
         {this.props.questions.map((question) => (
           <Question key={question.id} 
+            answer={this.props.currentUser.answers[question.id]}
             optionOne={question.optionOne.text} 
             optionTwo={question.optionTwo.text}
             id={question.id}
-            answerQuestion={this.answerQuestion}/>
+            answerQuestion={this.handleAnswerQuestion}/>
         ))}
+        {this.props.questions.length === 0 && 
+        (
+          <div>No questions left</div>
+        )}
       </div>
     )
   }
@@ -30,12 +35,15 @@ const mapStateToProps = (state, {answered}) => {
     Object.keys(state.questions)
       .filter(key => currentUser.answers[key])
       .map(key => state.questions[key])
+      .sort((a, b) => a.timestamp > b.timestamp)
     : Object.keys(state.questions)
       .filter(key => !currentUser.answers[key])
-      .map(key => state.questions[key]);
+      .map(key => state.questions[key])
+      .sort((a, b) => a.timestamp > b.timestamp);
 
   return {
     questions,
+    currentUser,
     authedUser: currentUser.id
   }
 }
