@@ -42,8 +42,11 @@ class Login extends React.Component {
 }
 
 const mapStateToPorps = (state) => {
+  const users = Object.keys(state.users).map(key => 
+    state.users[key]
+  );
   return {
-    users: state.users || []
+    users
   }
 }
 

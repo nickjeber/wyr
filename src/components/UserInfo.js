@@ -21,7 +21,7 @@ class UserInfo extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.users.find((user) => user.id === state.authedUser)
+    user: state.users[state.authedUser]
   }
 }
 
