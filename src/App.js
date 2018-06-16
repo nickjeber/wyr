@@ -6,6 +6,7 @@ import { loadInitialData } from './actions/shared';
 import HomePage from './components/HomePage';
 import LoadingBar from 'react-redux-loading';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import AddPoll from './components/AddPoll';
 
 class App extends Component {
   componentDidMount() {
@@ -16,9 +17,11 @@ class App extends Component {
     if(this.props.authedUser) {
       return (
         <Router>
-          <div style={{height: '100%'}}>
+          <div style={{height: '100%'}} className='app-container'>
             <LoadingBar />
             <Route path='/' exact component={HomePage} />
+            <Route path='/add' exact component={AddPoll} />
+            <Route path='/login' exact component={Login} />
           </div>
         </Router>
       );

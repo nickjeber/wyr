@@ -75,6 +75,43 @@ html, #root, body {
   justify-content: space-between;
 }
 
+.new-question-container{
+  display: flex;
+    flex-direction: column;
+    min-width: 400px;
+    justify-content: flex-start;
+    align-items: center;
+    height: 200px;
+    padding: 10px;
+}
+
+.new-question-container .title {
+  padding: 5px;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.new-question-container .option {
+  width: 100%;
+  padding: 5px;
+}
+
+.new-question-container .option span {
+  width: 100px;
+  display: inline-block;
+}
+.new-question-container .option input {
+  width: 280px;
+}
+
+.add-question-buttons {
+  width: 100%;
+  height: 30px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
 .app-container .content {
   display: flex;
   flex: 1;

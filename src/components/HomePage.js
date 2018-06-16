@@ -2,8 +2,7 @@ import React from 'react';
 import QuestionList from './QuestionList';
 import { connect } from 'react-redux';
 import { loadQuestions } from '../actions/shared';
-import Nav from './Nav';
-import UserInfo from './UserInfo';
+import AppHeader from './AppHeader';
 
 const UNANSWERED = 0;
 const ANSWERED = 1;
@@ -19,11 +18,8 @@ class HomePage extends React.Component {
 
   render() {
     return (
-      <div className='app-container'>
-        <div className='header'>
-          <Nav />
-          <UserInfo />
-        </div>
+      <div>
+        <AppHeader />
         <div className='content'>
           <h3>Would you rather!</h3>
           <div>
