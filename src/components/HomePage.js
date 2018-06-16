@@ -1,13 +1,14 @@
 import React from 'react';
-import UserInfo from './UserInfo';
 import QuestionList from './QuestionList';
 import { connect } from 'react-redux';
 import { loadQuestions } from '../actions/shared';
+import Nav from './Nav';
+import UserInfo from './UserInfo';
 
 const UNANSWERED = 0;
 const ANSWERED = 1;
 
-class MainContent extends React.Component {
+class HomePage extends React.Component {
   state = {
     questionView: UNANSWERED
   }
@@ -20,6 +21,7 @@ class MainContent extends React.Component {
     return (
       <div className='app-container'>
         <div className='header'>
+          <Nav />
           <UserInfo />
         </div>
         <div className='content'>
@@ -47,4 +49,4 @@ const mapStoreToProps = (store) => {
   }
 }
 
-export default connect(mapStoreToProps)(MainContent);
+export default connect(mapStoreToProps)(HomePage);

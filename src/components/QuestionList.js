@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Question from './Question';
+import QuestionElement from './Question';
 import { answerQuestion } from '../actions/questions';
 
 class QuestionList extends React.Component {
@@ -12,7 +12,7 @@ class QuestionList extends React.Component {
     return (
       <div className='question-container'>
         {this.props.questions.map((question) => (
-          <Question key={question.id} 
+          <QuestionElement key={question.id} 
             answer={this.props.currentUser.answers[question.id]}
             optionOne={question.optionOne.text} 
             optionTwo={question.optionTwo.text}

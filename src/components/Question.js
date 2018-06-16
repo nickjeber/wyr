@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Question extends React.Component {
+export default class QuestionElement extends React.Component {
   state = {
     optionOne: this.props.answer === 'optionOne',
     optionTwo: this.props.answer === 'optionTwo'
@@ -23,13 +23,6 @@ export default class Question extends React.Component {
 
     this.props.answerQuestion(this.props.id, 'optionOne');
   }
-
-  // componentDidMount() {
-  //   if(this.props.answer){
-  //     this.state.optionOne = this.props.answer === 'optionOne',
-  //     this.state.optionTwo = this.props.answer === 'optionTwo'
-  //   }
-  // }
 
   render() {
     return (

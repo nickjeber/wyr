@@ -3,8 +3,9 @@ import './App.css';
 import Login from './components/Login';
 import { connect } from 'react-redux';
 import { loadInitialData } from './actions/shared';
-import MainContent from './components/HomePage';
+import HomePage from './components/HomePage';
 import LoadingBar from 'react-redux-loading';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {
   componentDidMount() {
@@ -14,10 +15,12 @@ class App extends Component {
   render() {
     if(this.props.authedUser) {
       return (
-        <div style={{height: '100%'}}>
-          <LoadingBar />
-          <MainContent />
-        </div>
+        <Router>
+          <div style={{height: '100%'}}>
+            <LoadingBar />
+            <Route path='/' exact component={HomePage} />
+          </div>
+        </Router>
       );
     }
 

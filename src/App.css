@@ -72,7 +72,7 @@ html, #root, body {
   height: 60px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 .app-container .content {
@@ -91,6 +91,10 @@ html, #root, body {
   color: gray;
   font-size: 11px;
   display: flex;
+}
+
+.navigation a{
+  padding: 2px 10px;
 }
 
 .question {
