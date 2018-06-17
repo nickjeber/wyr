@@ -33,7 +33,7 @@ export const addQuestion = (optionOneText, optionTwoText, author) => {
 
     return _saveQuestion({optionOneText, optionTwoText, author})
     .then(() => {
-      loadQuestions();
+      dispatch(loadQuestions());
       dispatch(hideLoading());
     });
   }

@@ -12,6 +12,12 @@ class QuestionDetails extends React.Component {
     );
   }
 
+  renderStat = (option) => {
+    const votes = this.props.question[option].votes.length;
+    const votesInPercent = ((votes / Object.keys(this.props.users).length) * 100).toFixed(2);
+    return (<span>{votes} vote(s) ({votesInPercent}%)</span>);
+  }
+
   render() {
     return (
       <div>
@@ -26,10 +32,10 @@ class QuestionDetails extends React.Component {
               <span>{this.props.author.name}</span>
             </div>
             <div className='option-text'>
-              <span><b>Option one:</b> {this.renderAnswerMark('optionOne')}{this.props.question.optionOne.text}</span>
+              <span><b>Option one:</b> {this.renderStat('optionOne')} {this.renderAnswerMark('optionOne')}{this.props.question.optionOne.text}</span>
             </div>
             <div className='option-text'>
-              <span><b>Option two:</b> {this.renderAnswerMark('optionTwo')}{this.props.question.optionTwo.text}</span>
+              <span><b>Option two:</b> {this.renderStat('optionTwo')} {this.renderAnswerMark('optionTwo')}{this.props.question.optionTwo.text}</span>
             </div>
           </div>
         </div>)}
