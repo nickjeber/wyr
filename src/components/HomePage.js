@@ -1,7 +1,6 @@
 import React from 'react';
 import QuestionList from './QuestionList';
 import { connect } from 'react-redux';
-import { loadQuestions } from '../actions/shared';
 import AppHeader from './AppHeader';
 
 const UNANSWERED = 0;
@@ -10,10 +9,6 @@ const ANSWERED = 1;
 class HomePage extends React.Component {
   state = {
     questionView: UNANSWERED
-  }
-
-  componentDidMount() {
-    this.props.dispatch(loadQuestions());
   }
 
   render() {

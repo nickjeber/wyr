@@ -4,7 +4,7 @@ import AppHeader from './AppHeader';
 import { Redirect } from 'react-router-dom';
 import { addQuestion } from '../actions/questions';
 
-class AddPoll extends React.Component {
+class AddQuestion extends React.Component {
   state = {
     redirectToHome: false,
     optionOneText: '',
@@ -59,4 +59,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(AddPoll);
+export default connect(mapStateToProps)(AddQuestion);

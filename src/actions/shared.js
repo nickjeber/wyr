@@ -7,12 +7,14 @@ export function loadInitialData() {
   return (dispatch) => {
     dispatch(showLoading());
 
-    return _getUsers().then((users) => {
-      dispatch(getUsers(users));
-      //TODO: remove this once I'm done with development
-      dispatch(selectUser("sarahedo"))
-      //********/
-      dispatch(hideLoading());
+    return Promise.all([_getUsers(), _getQuestions()])
+      .then(([users, questions]) => {
+        dispatch(getUsers(users));
+        dispatch(getQuestions(questions));
+        //TODO: remove this once I'm done with development
+        dispatch(selectUser("sarahedo"))
+        //********/
+        dispatch(hideLoading());
     });
   }
 }

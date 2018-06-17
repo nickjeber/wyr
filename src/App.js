@@ -6,7 +6,8 @@ import { loadInitialData } from './actions/shared';
 import HomePage from './components/HomePage';
 import LoadingBar from 'react-redux-loading';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import AddPoll from './components/AddPoll';
+import AddQuestion from './components/AddQuestion';
+import QuestionDetails from './components/QuestionDetails';
 
 class App extends Component {
   componentDidMount() {
@@ -20,8 +21,9 @@ class App extends Component {
           <div style={{height: '100%'}} className='app-container'>
             <LoadingBar />
             <Route path='/' exact component={HomePage} />
-            <Route path='/add' exact component={AddPoll} />
-            <Route path='/login' exact component={Login} />
+            <Route path='/add' component={AddQuestion} />
+            <Route path='/login' component={Login} />
+            <Route path='/question/:id' component={QuestionDetails} />
           </div>
         </Router>
       );

@@ -12,6 +12,36 @@ html, #root, body {
   flex-direction: column;
 }
 
+.vote-button {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;  
+  padding: 4px;
+  border: 1px solid black;
+  background-color: white;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.option-label {
+  cursor: pointer;
+}
+
+.question-details-content {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;
+}
+
+.vote-button.selected {
+  background-color: green;
+}
+
+.question a {
+  text-decoration: none;
+  color: black;
+}
+
 .login-form, 
 .signup-form {
   width: 400px;
@@ -60,6 +90,22 @@ html, #root, body {
 .user-info span {
   font-size: 14px;
   padding: 10px;
+}
+
+.question-details-user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.option-text {
+  padding: 10px;  
+}
+
+.question-details-user-info span {
+  font-size: 13pt;
 }
 
 .app-container {
@@ -135,7 +181,6 @@ html, #root, body {
 }
 
 .question {
-  padding: 10px;
   border: 1px solid #e9e9e9;
   margin-top: 10px;
   min-width: 300px;
