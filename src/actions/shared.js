@@ -12,7 +12,7 @@ export function loadInitialData() {
         dispatch(getUsers(users));
         dispatch(getQuestions(questions));
         //TODO: remove this once I'm done with development
-        dispatch(selectUser("sarahedo"))
+        //dispatch(selectUser("sarahedo"))
         //********/
         dispatch(hideLoading());
     });

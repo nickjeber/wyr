@@ -27,9 +27,6 @@ class HomePage extends React.Component {
           </div>
           <QuestionList answered={this.state.questionView === ANSWERED} />
         </div>
-        <div className='footer'>
-          made by S.Tynskyi
-        </div>
       </div> 
     );
   }

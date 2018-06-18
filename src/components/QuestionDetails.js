@@ -32,10 +32,10 @@ class QuestionDetails extends React.Component {
               <span>{this.props.author.name}</span>
             </div>
             <div className='option-text'>
-              <span><b>Option one:</b> {this.renderStat('optionOne')} {this.renderAnswerMark('optionOne')}{this.props.question.optionOne.text}</span>
+              <span>{this.renderStat('optionOne')} {this.renderAnswerMark('optionOne')}{this.props.question.optionOne.text}</span>
             </div>
             <div className='option-text'>
-              <span><b>Option two:</b> {this.renderStat('optionTwo')} {this.renderAnswerMark('optionTwo')}{this.props.question.optionTwo.text}</span>
+              <span>{this.renderStat('optionTwo')} {this.renderAnswerMark('optionTwo')}{this.props.question.optionTwo.text}</span>
             </div>
           </div>
         </div>)}

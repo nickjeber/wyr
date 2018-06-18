@@ -179,15 +179,6 @@ html, #root, body {
   overflow: auto;
 }
 
-.app-container .footer {
-  height: 40px;
-  justify-content: center;
-  align-items: center;
-  color: gray;
-  font-size: 11px;
-  display: flex;
-}
-
 .navigation a{
   padding: 2px 10px;
 }
