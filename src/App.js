@@ -8,6 +8,7 @@ import LoadingBar from 'react-redux-loading';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import AddQuestion from './components/AddQuestion';
 import QuestionDetails from './components/QuestionDetails';
+import LeaderBoard from './components/LeaderBoard';
 
 class App extends Component {
   componentDidMount() {
@@ -23,6 +24,7 @@ class App extends Component {
             <Route path='/' exact component={HomePage} />
             <Route path='/add' component={AddQuestion} />
             <Route path='/login' component={Login} />
+            <Route path='/leaderboard' component={LeaderBoard} />
             <Route path='/question/:id' component={QuestionDetails} />
           </div>
         </Router>

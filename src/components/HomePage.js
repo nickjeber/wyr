@@ -13,7 +13,7 @@ class HomePage extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={{height: '100%'}}>
         <AppHeader />
         <div className='content'>
           <h3>Would you rather!</h3>

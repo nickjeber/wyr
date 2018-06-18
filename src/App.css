@@ -92,6 +92,18 @@ html, #root, body {
   padding: 10px;
 }
 
+.leaderboard-user-info {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid lightgray;
+  margin: 5px;
+}
+
+.leaderboard-user-info-container {
+  display: inline-block;
+  margin-left: 10px;
+}
+
 .question-details-user-info {
   display: flex;
   flex-direction: row;

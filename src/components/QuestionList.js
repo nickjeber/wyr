@@ -28,21 +28,21 @@ class QuestionList extends React.Component {
   }
 }
 
-const mapStateToProps = (state, {answered}) => {
-  const currentUser = state.users[state.authedUser];
+const mapStateToProps = ({users, authedUser, questions}, {answered}) => {
+  const currentUser = users[authedUser];
 
-  const questions = answered ? 
-    Object.keys(state.questions)
+  const filteredQuestions = answered ? 
+    Object.keys(questions)
       .filter(key => currentUser.answers[key])
-      .map(key => state.questions[key])
-      .sort((a, b) => a.timestamp > b.timestamp)
-    : Object.keys(state.questions)
+      .map(key => questions[key])
+      .sort((a, b) => b.timestamp - a.timestamp)
+    : Object.keys(questions)
       .filter(key => !currentUser.answers[key])
-      .map(key => state.questions[key])
-      .sort((a, b) => a.timestamp > b.timestamp);
+      .map(key => questions[key])
+      .sort((a, b) => b.timestamp - a.timestamp);
 
   return {
-    questions,
+    questions: filteredQuestions,
     currentUser,
     authedUser: currentUser.id
   }
