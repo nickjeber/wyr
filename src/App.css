@@ -23,6 +23,11 @@ html, #root, body {
   cursor: pointer;
 }
 
+.vote-button:disabled {
+  border: 1px solid gray;
+  cursor: default;
+}
+
 .option-label {
   cursor: pointer;
 }

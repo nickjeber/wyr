@@ -1,14 +1,25 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import AppHeader from './AppHeader';
+import { answerQuestion } from '../actions/questions';
 
 class QuestionDetails extends React.Component {
+  state = {
+    optionsDisabled: this.props.answer
+  }
+
+  optionChanged = (option) => {
+    this.setState({optionsDisabled: true})
+    this.props.dispatch(answerQuestion(this.props.currentUser.id, this.props.question.id, option));
+  }
+
   renderAnswerMark = (selectedOption) => {
     const isChecked = this.props.currentUser.answers[this.props.question.id] === selectedOption;
     return (
       <button
-        disabled={true} 
-        className={'vote-button ' + (isChecked ? 'selected' : '')}></button>
+        disabled={this.state.optionsDisabled} 
+        className={'vote-button ' + (isChecked ? 'selected' : '')}
+        onClick={() => this.optionChanged(selectedOption)}></button>
     );
   }
 
@@ -58,7 +69,7 @@ const mapStateToProps = ({questions, users, authedUser}, {match}) => {
     question: question,
     users: users,
     currentUser: users[authedUser],
-    answer: users[question.author].answers[question.id],
+    answer: users[authedUser].answers[question.id],
     author: users[question.author]
   };
 }
