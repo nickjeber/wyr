@@ -24,9 +24,13 @@ class QuestionDetails extends React.Component {
   }
 
   renderStat = (option) => {
-    const votes = this.props.question[option].votes.length;
-    const votesInPercent = ((votes / Object.keys(this.props.users).length) * 100).toFixed(2);
-    return (<span>{votes} vote(s) ({votesInPercent}%)</span>);
+    if(this.props.answer){
+      const votes = this.props.question[option].votes.length;
+      const votesInPercent = ((votes / Object.keys(this.props.users).length) * 100).toFixed(2);
+      return (<span>{votes} vote(s) ({votesInPercent}%)</span>);
+    }
+
+    return null;
   }
 
   render() {
