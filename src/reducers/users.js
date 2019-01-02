@@ -2,10 +2,10 @@ import { GET_USERS } from "../actions/user";
 import { ANSWER_QUESTION } from "../actions/questions";
 
 export default (state = [], action) => {
-  switch(action.type) {
-    case GET_USERS :
+  switch (action.type) {
+    case GET_USERS:
       return action.users;
-    case ANSWER_QUESTION :
+    case ANSWER_QUESTION:
       return {
         ...state,
         [action.authedUser]: {
@@ -15,8 +15,8 @@ export default (state = [], action) => {
             [action.questionId]: action.answer
           }
         }
-      }
-    default: 
+      };
+    default:
       return state;
   }
-}
+};

@@ -1,67 +1,78 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default class QuestionElement extends React.Component {
   state = {
-    optionOne: this.props.answer === 'optionOne',
-    optionTwo: this.props.answer === 'optionTwo'
-  }
+    optionOne: this.props.answer === "optionOne",
+    optionTwo: this.props.answer === "optionTwo"
+  };
 
-  optionTwoChanged = (e) => {
-    if(this.props.answer) {
+  optionTwoChanged = e => {
+    if (this.props.answer) {
       return;
     }
 
     e.preventDefault();
 
-    this.setState((prev) => ({
+    this.setState(prev => ({
       optionOne: false,
       optionTwo: !prev.optionTwo
     }));
 
-    this.props.answerQuestion(this.props.id, 'optionTwo');
-  }
+    this.props.answerQuestion(this.props.id, "optionTwo");
+  };
 
-  optionOneChanged = (e) => {
-    if(this.props.answer) {
+  optionOneChanged = e => {
+    if (this.props.answer) {
       return;
     }
 
     e.preventDefault();
 
-    this.setState((prev) => ({
+    this.setState(prev => ({
       optionTwo: false,
       optionOne: !prev.optionOne
     }));
 
-    this.props.answerQuestion(this.props.id, 'optionOne');
-  }
+    this.props.answerQuestion(this.props.id, "optionOne");
+  };
 
   render() {
     return (
-      <div className='question'>
+      <div className="question">
         <Link to={`/question/${this.props.id}`}>
-          
           <div>
-            <label className='option-label' onClick={(e) => this.optionOneChanged(e)}>
+            <label
+              className="option-label"
+              onClick={e => this.optionOneChanged(e)}
+            >
               <button
-                disabled={this.props.answer} 
-                className={'vote-button ' + (this.state.optionOne ? 'selected' : '')} 
-                onClick={(e) => this.optionOneChanged(e)}></button>
+                disabled={this.props.answer}
+                className={
+                  "vote-button " + (this.state.optionOne ? "selected" : "")
+                }
+                onClick={e => this.optionOneChanged(e)}
+              />
               {this.props.optionOne}
             </label>
           </div>
           <div>
-            <label className='option-label' onClick={(e) => this.optionTwoChanged(e)}>
+            <label
+              className="option-label"
+              onClick={e => this.optionTwoChanged(e)}
+            >
               <button
-                disabled={this.props.answer} 
-                className={'vote-button ' + (this.state.optionTwo ? 'selected' : '')} 
-                onClick={(e) => this.optionTwoChanged(e)}></button>
+                disabled={this.props.answer}
+                className={
+                  "vote-button " + (this.state.optionTwo ? "selected" : "")
+                }
+                onClick={e => this.optionTwoChanged(e)}
+              />
               {this.props.optionTwo}
             </label>
           </div>
           <div className="link-to-results">
-          Click Here to View Poll Results &raquo;
+            Click Here to View Poll Results &raquo;
           </div>
         </Link>
       </div>
