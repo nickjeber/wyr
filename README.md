@@ -10,3 +10,4 @@ For my second Udacity course app, I wanted to focus a bit more on usability. It'
 6. Log out at will
 
 
+# wyr
