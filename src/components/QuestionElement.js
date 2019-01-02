@@ -41,6 +41,7 @@ export default class QuestionElement extends React.Component {
     return (
       <div className='question'>
         <Link to={`/question/${this.props.id}`}>
+          
           <div>
             <label className='option-label' onClick={(e) => this.optionOneChanged(e)}>
               <button
@@ -58,6 +59,9 @@ export default class QuestionElement extends React.Component {
                 onClick={(e) => this.optionTwoChanged(e)}></button>
               {this.props.optionTwo}
             </label>
+          </div>
+          <div className="link-to-results">
+          Click Here to View Poll Results &raquo;
           </div>
         </Link>
       </div>

@@ -1,15 +1,12 @@
-# Would You Rather Project
+WOULD YOU RATHER
 
-This is the project for second module of Udacity React & Readux course. The application functionality includes:
-* Log in / log out for the user
-* See the dashboard for currently logged in user
-* Ability to add new questions
-* Ability to vote for questions
-* See the leaderboard which shows all users and their place
-* See the specific question details
+For my second Udacity course app, I wanted to focus a bit more on usability. It's still installs and starts in 3 steps (save from repository, run npm install, run npm start) but it should feel cohesive and clean when using it. A user should easily be able to:  
+
+1. Select their name from a dropdown to login
+2. Answer 'WYR' questions
+3. View Answered & Unanswered Questions
+4. Add Questions via the top-level navigation
+5. View the Leader Board
+6. Log out at will
 
 
-### How to install and run it
-* pull the code
-* run `npm install`
-* run `yarn start`

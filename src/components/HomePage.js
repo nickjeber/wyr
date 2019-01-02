@@ -1,7 +1,7 @@
 import React from 'react';
 import QuestionList from './QuestionList';
 import { connect } from 'react-redux';
-import AppHeader from './AppHeader';
+import Header from './Header';
 
 const UNANSWERED = 0;
 const ANSWERED = 1;
@@ -14,18 +14,19 @@ class HomePage extends React.Component {
   render() {
     return (
       <div style={{height: '100%'}}>
-        <AppHeader />
+        <Header /> 
         <div className='content'>
-          <h3>Would you rather!</h3>
+         <h1>Would You Rather</h1>
+           <QuestionList answered={this.state.questionView === ANSWERED} />
           <div>
-            <button 
+            <button className="answer-buttons"
               disabled={this.state.questionView === UNANSWERED}
               onClick={() => this.setState({questionView: UNANSWERED})}>Unanswered questions</button>
-            <button 
+            <button  className="answer-buttons"
               disabled={this.state.questionView === ANSWERED}
               onClick={() => this.setState({questionView: ANSWERED})}>Answered questions</button>
           </div>
-          <QuestionList answered={this.state.questionView === ANSWERED} />
+         
         </div>
       </div> 
     );

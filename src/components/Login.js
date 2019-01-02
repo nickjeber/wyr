@@ -21,21 +21,17 @@ class Login extends React.Component {
   render() {
     return (
       <div className='login-container'>
-        <h4>Log in</h4>
+        <h1>Would You Rather</h1>
         <div className='login-form'>
-          <select onChange={this.userChanged}>
-            <option value={null}>Select user please</option>
+          <select className='selector' onChange={this.userChanged}>
+            <option value={null}>Select user...</option>
             {this.props.users.map((user) => (
               <option key={user.id} value={user.id}>{user.name}</option>
             ))}
           </select>
           <button onClick={this.logIn}>Log in</button>
         </div>
-        {/* <h4>Or sign up</h4>
-        <div className='signup-form'>
-            <input type='text' placeholder='Enter user name'/>
-            <button>Create and enter</button>
-        </div> */}
+    
       </div>
     );
   }

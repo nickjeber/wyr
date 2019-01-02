@@ -1,5 +1,5 @@
 import React from 'react';
-import AppHeader from './AppHeader';
+import Header from './Header';
 import { connect } from 'react-redux';
 
 class LeaderBoard extends React.Component {
@@ -11,14 +11,14 @@ class LeaderBoard extends React.Component {
   render() {
     return (
       <div>
-        <AppHeader />
+        <Header />
         <div className='content'>
-          <h4>Leader board</h4>
+          <h1>Leader board</h1>
           {this.props.users.map(user => (
             <div key={user.id} className='leaderboard-user-info'>
               <img className='user-avatar' src={user.avatarURL} alt='author' />
               <div className='leaderboard-user-info-container'>
-                <div>{user.name}</div>
+                <div><strong>{user.name}</strong></div>
                 <div>{this.getNumAskedQuestions(user)} asked questions</div>
                 <div>{Object.keys(user.answers).length} answers</div>
               </div>

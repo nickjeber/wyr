@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import AppHeader from './AppHeader';
+import Header from './Header';
 import { answerQuestion } from '../actions/questions';
 
 class QuestionDetails extends React.Component {
@@ -36,15 +36,14 @@ class QuestionDetails extends React.Component {
   render() {
     return (
       <div>
-        <AppHeader />
+        <Header />
         {this.props.notFound && <span>Requested question not found</span>}
         {!this.props.notFound && (<div className='content'>
-          <h4>Would You Rather</h4>
+          <h1>Would You Rather</h1>
           <div className='question-details-content'>
             <div className='question-details-user-info'>
-              Author:
               <img className='user-avatar' src={this.props.author.avatarURL} alt='author' />
-              <span>{this.props.author.name}</span>
+              <span className="author-name">{this.props.author.name}</span>
             </div>
             <div className='option-text'>
               <span>{this.renderStat('optionOne')} {this.renderAnswerMark('optionOne')}{this.props.question.optionOne.text}</span>

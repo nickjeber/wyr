@@ -1,8 +1,8 @@
 let users = {
-  sarahedo: {
-    id: 'sarahedo',
-    name: 'Sarah Edo',
-    avatarURL: 'https://bit.ly/2sRPaBg',
+  sandrabullock: {
+    id: 'sandrabullock',
+    name: 'Sandra Bullock',
+    avatarURL: 'https://media1.popsugar-assets.com/files/thumbor/PNgJLenfeYQfkbmlJ4d3lznVEL8/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2018/07/16/743/n/1922398/1f877a5a5b4cccb60be5d5.77818567_/i/Sandra-Bullock.jpg',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -14,17 +14,17 @@ let users = {
   tylermcginnis: {
     id: 'tylermcginnis',
     name: 'Tyler McGinnis',
-    avatarURL: 'https://bit.ly/2y7VI3V',
+    avatarURL: 'https://si.wsj.net/public/resources/images/AR-AF729_HaRDY_GS_20140416175521.jpg',
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
     },
     questions: ['loxhs1bqm25b708cmbf3g', 'vthrdm985a262al8qx3do'],
   },
-  johndoe: {
-    id: 'johndoe',
-    name: 'John Doe',
-    avatarURL: 'https://bit.ly/2LNFmiK',
+  seanconnery: {
+    id: 'seanconnery',
+    name: 'Sean Connery',
+    avatarURL: 'https://i.ebayimg.com/images/g/yC0AAOSwU~FWEiX~/s-l300.jpg',
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',
@@ -37,41 +37,41 @@ let users = {
 let questions = {
   "8xf0y6ziyjabvozdd253nd": {
     id: '8xf0y6ziyjabvozdd253nd',
-    author: 'sarahedo',
+    author: 'sandrabullock',
     timestamp: 1467166872634,
     optionOne: {
-      votes: ['sarahedo'],
-      text: 'have horrible short term memory',
+      votes: ['sandrabullock'],
+      text: 'lose all of your money and valuables?',
     },
     optionTwo: {
       votes: [],
-      text: 'have horrible long term memory'
+      text: 'lose all of the photos you have ever taken?'
     }
   },
   "6ni6ok3ym7mf1p33lnez": {
     id: '6ni6ok3ym7mf1p33lnez',
-    author: 'johndoe',
+    author: 'seanconnery',
     timestamp: 1468479767190,
     optionOne: {
       votes: [],
-      text: 'become a superhero',
+      text: 'be able to see 10 minutes into your own future?',
     },
     optionTwo: {
-      votes: ['johndoe', 'sarahedo'],
-      text: 'become a supervillian'
+      votes: ['seanconnery', 'hsandrabullock'],
+      text: 'be able to see 10 minutes into the future of anyone but yourself?'
     }
   },
   "am8ehyc8byjqgar0jgpub9": {
     id: 'am8ehyc8byjqgar0jgpub9',
-    author: 'sarahedo',
+    author: 'sandrabullock',
     timestamp: 1488579767190,
     optionOne: {
       votes: [],
-      text: 'be telekinetic',
+      text: 'be famous when you are alive and forgotten when you die?',
     },
     optionTwo: {
-      votes: ['sarahedo'],
-      text: 'be telepathic'
+      votes: ['sandrabullock'],
+      text: 'be unknown when you are alive but famous after you die?'
     }
   },
   "loxhs1bqm25b708cmbf3g": {
@@ -80,11 +80,11 @@ let questions = {
     timestamp: 1482579767190,
     optionOne: {
       votes: [],
-      text: 'be a front-end developer',
+      text: 'go to jail for 4 years for something you didn’t do?',
     },
     optionTwo: {
-      votes: ['sarahedo'],
-      text: 'be a back-end developer'
+      votes: ['sandrabullock'],
+      text: 'get away with something horrible you did but always live in fear of being caught?'
     }
   },
   "vthrdm985a262al8qx3do": {
@@ -93,24 +93,24 @@ let questions = {
     timestamp: 1489579767190,
     optionOne: {
       votes: ['tylermcginnis'],
-      text: 'find $50 yourself',
+      text: 'your shirts be always two sizes too big?',
     },
     optionTwo: {
-      votes: ['johndoe'],
-      text: 'have your best friend find $500'
+      votes: ['seanconnery'],
+      text: 'your shirts be always one size too small?'
     }
   },
   "xj352vofupe1dqz9emx13r": {
     id: 'xj352vofupe1dqz9emx13r',
-    author: 'johndoe',
+    author: 'seanconnery',
     timestamp: 1493579767190,
     optionOne: {
-      votes: ['johndoe'],
-      text: 'write JavaScript',
+      votes: ['seanconnery'],
+      text: 'live in the wilderness far from civilization?',
     },
     optionTwo: {
       votes: ['tylermcginnis'],
-      text: 'write Swift'
+      text: 'live on the streets of a city as a homeless person?'
     }
   },
 }

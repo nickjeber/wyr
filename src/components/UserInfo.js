@@ -11,9 +11,8 @@ class UserInfo extends React.Component {
     return (
       <div className='user-info'>
         <img src={this.props.user.avatarURL} className='user-avatar' alt='User avatar' />
-        <span>Welcome {this.props.user.name}</span>
-        <span> / </span>
-        <button title='Click to log out' onClick={this.logout}>Log out</button>
+        <span>Welcome back, <strong>{this.props.user.name}</strong></span>
+        <button title='Click to log out' onClick={this.logout}><i>(Log out)</i></button>
       </div>
     )
   }

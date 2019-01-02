@@ -7,7 +7,7 @@ export default class Nav extends React.Component {
       <div className='navigation'>
         <Link to='/'>Home</Link>
         <Link to='/add'>Add question</Link>
-        <Link to='/leaderboard'>Leader board</Link>
+        <Link to='/leaderboard'>Leaders</Link>
       </div>
     );
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import AppHeader from './AppHeader';
+import Header from './Header';
 import { Redirect } from 'react-router-dom';
 import { addQuestion } from '../actions/questions';
 
@@ -23,9 +23,9 @@ class AddQuestion extends React.Component {
 
     return (
       <div>
-        <AppHeader />
+        <Header />
         <div className='content'>
-          <h4>Add new poll</h4>
+          <h1>Add Question</h1>
           <div className='new-question-container'>
             <div>
               <div className='title'>Would you rather</div>
