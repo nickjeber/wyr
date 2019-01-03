@@ -29,10 +29,10 @@ class QuestionDetails extends React.Component {
 
   renderStat = option => {
     if (this.props.answer) {
+      const totalVotes = this.props.question.optionOne.votes.length + this.props.question.optionTwo.votes.length; 
       const votes = this.props.question[option].votes.length;
       const votesInPercent = (
-        (votes / Object.keys(this.props.users).length) *
-        100
+        (votes / totalVotes * 100)
       ).toFixed(2);
       return (
         <span>
